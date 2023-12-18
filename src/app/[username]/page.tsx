@@ -5,6 +5,7 @@ import { PostForm } from "@/ui/component/PostForm";
 import { PostItem } from "@/ui/component/PostItem";
 import { db } from "@/db/db";
 import { tweet, user } from "@/db/schema";
+import { AutoRefresh } from "@/ui/component/AutoRefresh";
 
 const getCachedUser = unstable_cache(
 	async (username: string) => {
@@ -63,6 +64,7 @@ export default async function HomePage({ params }: { params: { username: string 
 			))}
 
 			<div className="flex items-center justify-center border-b border-l border-r border-gray-200 p-4 dark:border-gray-700"></div>
+			<AutoRefresh />
 		</div>
 	);
 }
